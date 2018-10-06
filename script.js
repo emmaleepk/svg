@@ -1,10 +1,10 @@
 var t1 = new TimelineMax();
 var t2 = new TimelineMax();
 
-//TweenLite.set("#skull1", {css:{backgroundColor:"#FF0000"}});
+
 
 $('.play').click(function(){
-    t2.reverse();
+    TweenLite.set("#happySkull1", {css:{display:"block"}});
 //     var t1 = new TimelineMax();
 //     console.log("click");
     
@@ -38,4 +38,55 @@ t2.to("#circle", 0.5, {x:"400", transformOrigin:"center", delay:2, ease:Power0.e
 }).to("#circle", 0.5, {x:"695",y:"280",ease:Power0.easeNone
 }).to("#circle", 0.5, {x:"715",y:"300",ease:Power0.easeNone
 }).to("#circle", 0.5, {x:"840",y:"440",ease:Power0.easeNone
-}).from("#skull1", 1,{scale:0, transformOrigin: "center", ease:Power3.easeOut})
+}).from("#skull1", 1,{scale:0, transformOrigin: "center", ease:Power3.easeOut
+}).from("#imageContainer", 1,{scale:0, transformOrigin: "center", ease:Power3.easeOut})
+
+$(document).ready(function () {
+    let numDivs = $('.num');
+    numDivs.text('0');
+});
+
+$("#defuseBody").keypress(function (event) {
+    var aDiv = $('#a');
+    var sDiv = $('#s');
+    var dDiv = $('#d');
+    var fDiv = $('#f');
+    var allNum = $('.num');
+    var digitStr = '';
+    console.log(event.key);
+    switch (event.key) {
+        case 'a':
+            incA(aDiv);
+            break;
+        case 's':
+            incA(sDiv);
+            break;
+        case 'd':
+            incA(dDiv);
+            break;
+        case 'f':
+            incA(fDiv);
+            break;
+        case '.':
+            // reset to zeros
+            allNum.text('0');
+            break;
+        case ' ':
+            digitStr = aDiv.text() + sDiv.text() + dDiv.text() + fDiv.text();
+            alert(digitStr);
+            //console.log(digitStr);
+            break;
+        default:
+            break;
+
+    }
+});
+
+function incA(someDiv) {
+    let a = parseInt(someDiv.text())
+    a++;
+    if (a >= 10) {
+        a = 0;
+    }
+    someDiv.text(a)
+}
