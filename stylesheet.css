@@ -20,10 +20,13 @@ body{
 .overlay {
     /* background-size: cover; */
     /* background-position: 50% 50%; */
+    height: 3840px;
+    width: 2160;
     margin-left:auto;
     margin-right:auto;
     display: block;
     z-index: 0 ;
+    
 }
 
 #imageContainer{
@@ -31,8 +34,8 @@ body{
     z-index:5;  
     background-size: cover;
     background-position: 50% 50%;
-    top:1250px;
-    left:820px;
+    top:2500px;
+    left:3390px;
     height: 500px;
     position: absolute;
     width: 800px;

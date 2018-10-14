@@ -5,6 +5,9 @@ var t2 = new TimelineMax();
 
 $('.play').click(function(){
     TweenLite.set("#happySkull1", {css:{display:"block"}});
+    TweenLite.set("#happySkull2", {css:{display:"block"}});
+    TweenLite.set("#happySkull3", {css:{display:"block"}});
+    TweenLite.set("#happySkull4", {css:{display:"block"}});
 //     var t1 = new TimelineMax();
 //     console.log("click");
     
@@ -22,24 +25,34 @@ $('.play').click(function(){
 t2.set("#circle",{zIndex:2})
 
 
-t2.to("#circle", 0.5, {x:"400", transformOrigin:"center", delay:2, ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"530", ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"550",y:"10",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"590",y:"25",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"630",y:"45",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"633",y:"50",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"640",y:"90",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"640",y:"190",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"645",y:"200",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"645",y:"200",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"645",y:"200",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"655",y:"220",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"675",y:"260",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"695",y:"280",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"715",y:"300",ease:Power0.easeNone
-}).to("#circle", 0.5, {x:"840",y:"440",ease:Power0.easeNone
-}).from("#skull1", 1,{scale:0, transformOrigin: "center", ease:Power3.easeOut
-}).from("#imageContainer", 1,{scale:0, transformOrigin: "center", ease:Power3.easeOut})
+t2.set("#circle",{css:{display:"block"}
+}).from("#skull1", 1,{scale:0, transformOrigin: "center", delay:5, ease:Power3.easeOut
+}).to("#circle", 0.9, {x:"700", transformOrigin:"center", ease:Power0.easeNone
+}).to("#circle", 0.4, {x:"900", ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"1140",y:"50",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"1165",y:"80",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"1175",y:"95",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"1200",y:"115",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"1230",y:"400",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"1250",y:"450",ease:Power0.easeNone
+}).to("#circle", 0.9, {x:"1580",y:"833",ease:Power0.easeNone  //Bakers St//
+}).from("#skull2", 1,{scale:0, transformOrigin: "center", ease:Power3.easeOut
+}).to("#circle", 0.5, {x:"1870",y:"810",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"2135",y:"690",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"2265",y:"600",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"2450",y:"570",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"2555",y:"610",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"2740",y:"845",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"2955",y:"870",ease:Power0.easeNone //Aldergate//
+}).from("#skull3", 1,{scale:0, transformOrigin: "center", ease:Power3.easeOut
+}).to("#circle", 0.5, {x:"3100",y:"875",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"3340",y:"925",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"3573",y:"987",ease:Power0.easeNone //Aldgate East//
+}).from("#skull4", 1,{scale:0, transformOrigin: "center", ease:Power3.easeOut
+}).to("#circle", 0.5, {x:"3770",y:"875",ease:Power0.easeNone
+}).to("#circle", 0.5, {x:"3875",y:"830",ease:Power0.easeNone // Whitechapel//
+}).from("#imageContainer", 1,{scale:0, transformOrigin: "center", ease:Power3.easeOut
+})
 
 $(document).ready(function () {
     let numDivs = $('.num');
@@ -56,6 +69,7 @@ $("#defuseBody").keypress(function (event) {
     console.log(event.key);
     switch (event.key) {
         case 'a':
+            console.log("Hi");
             incA(aDiv);
             break;
         case 's':
